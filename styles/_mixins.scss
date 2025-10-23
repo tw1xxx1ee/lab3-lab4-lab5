@@ -1,0 +1,31 @@
+@use 'variables' as var;
+@use 'sass:color';
+
+@mixin rounded-corners($radius: 5px) { border-radius: $radius; }
+
+@mixin card-style {
+  @include rounded-corners(1rem);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: all 0.3s;
+  &:hover { 
+    box-shadow: 0 10px 25px rgba(34,197,94,0.3); // Green glow
+    transform: translateY(-5px);
+  }
+}
+
+@mixin button-primary {
+  background: var(--main-color);
+  color: white;
+  padding: 1rem 2rem;
+  @include rounded-corners(9999px);
+  font-weight: bold;
+  transition: all 0.3s;
+  &:hover { 
+    background: color.adjust(var.$main-color, $lightness: -10%);
+    box-shadow: 0 0 20px rgba(34,197,94,0.5); // Glow
+    transform: scale(1.05);
+  }
+}
+
+// Anim keyframes
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }

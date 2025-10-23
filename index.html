@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Assistant Pro - Умный ИИ для бизнеса и разработчиков">
+    <title>AI Assistant Pro - Ваш ИИ-помощник</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans transition-all duration-300 scroll-smooth pt-16">
+    <!-- Fixed Navbar с mobile menu (responsive: desktop flex, mobile hamburger toggle) -->
+    <nav class="bg-gray-800 dark:bg-gray-900 shadow-xl fixed top-0 left-0 right-0 z-50 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 relative">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-green-400">AI Assistant Pro</h1>
+                </div>
+                <!-- Desktop menu: hidden on mobile -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-300 hover:text-green-400 px-3 py-2 rounded-md text-sm font-medium transition">О нас</a>
+                    <a href="#features" class="text-gray-300 hover:text-green-400 px-3 py-2 rounded-md text-sm font-medium transition">Функции</a>
+                    <a href="#advantages" class="text-gray-300 hover:text-green-400 px-3 py-2 rounded-md text-sm font-medium transition">Преимущества</a>
+                    <a href="#testimonials" class="text-gray-300 hover:text-green-400 px-3 py-2 rounded-md text-sm font-medium transition">Отзывы</a>
+                    <a href="#pricing" class="text-gray-300 hover:text-green-400 px-3 py-2 rounded-md text-sm font-medium transition">Цены</a>
+                    <a href="#contact" class="text-gray-300 hover:text-green-400 px-3 py-2 rounded-md text-sm font-medium transition">Контакты</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden relative">
+                    <button id="mobile-toggle" class="text-gray-300 hover:text-green-400 text-2xl">☰</button>
+                    <!-- Mobile menu: absolute, slide-in -->
+                    <ul id="mobile-menu" class="absolute top-full left-0 w-full bg-gray-800 shadow-lg hidden transition-transform duration-300 transform -translate-x-full mobile-open:translate-x-0">
+                        <li class="p-4 border-b border-gray-700"><a href="#about" class="block text-gray-300 hover:text-green-400 py-2">О нас</a></li>
+                        <li class="p-4 border-b border-gray-700"><a href="#features" class="block text-gray-300 hover:text-green-400 py-2">Функции</a></li>
+                        <li class="p-4 border-b border-gray-700"><a href="#advantages" class="block text-gray-300 hover:text-green-400 py-2">Преимущества</a></li>
+                        <li class="p-4 border-b border-gray-700"><a href="#testimonials" class="block text-gray-300 hover:text-green-400 py-2">Отзывы</a></li>
+                        <li class="p-4 border-b border-gray-700"><a href="#pricing" class="block text-gray-300 hover:text-green-400 py-2">Цены</a></li>
+                        <li class="p-4"><a href="#contact" class="block text-gray-300 hover:text-green-400 py-2">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 overflow-hidden">
+        <canvas id="hero-canvas" class="absolute inset-0 opacity-20"></canvas>
+        <div class="max-w-4xl mx-auto text-center px-4 relative z-10">
+            <h2 id="typewriter" class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400 animate-pulse"></h2>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto opacity-0 fade-in">AI Assistant Pro ускоряет вашу работу с автоматизацией, анализом и креативом. Готовы к будущему?</p>
+            <a href="#features" class="button-primary scale-110 hover:scale-110 transition-transform">Начать бесплатно</a>
+        </div>
+        <img src="https://media.istockphoto.com/id/1470617656/vector/ai-artificial-intelligence-chipset-on-circuit-board-in-futuristic-concept-suitable-for.jpg?s=612x612&w=0&k=20&c=_wC-pphyNI2muaUHG4N9JuYXxJEMDuzx56Dvzr8ZDUk=" alt="AI Abstract Background" class="absolute bottom-0 left-0 w-full h-1/2 object-cover opacity-30 parallax" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/1920x600?text=AI+Abstract&bg=purple&color=white'">
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-20 bg-gray-800 opacity-0 fade-in">
+        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1">
+                <h3 class="text-4xl font-bold mb-6 text-green-400">Почему выбрать нас?</h3>
+                <p class="text-gray-300 leading-relaxed">Наш ИИ анализирует данные в реальном времени, генерирует отчёты и автоматизирует рутину. Идеально для бизнеса, разработчиков и креатива. С фокусом на безопасность и скорость.</p>
+                <ul class="mt-4 space-y-2 text-gray-400">
+                    <li>• Интеграция с API</li>
+                    <li>• 99.9% uptime</li>
+                    <li>• Бесплатный триал</li>
+                </ul>
+            </div>
+            <div class="order-1 md:order-2 flex justify-center">
+                <img src="https://img.freepik.com/free-photo/digital-dashboard_23-2151957114.jpg?semt=ais_hybrid&w=500&q=80" alt="AI Dashboard" class="rounded-2xl shadow-2xl w-full max-w-md animate-float" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/500x400?text=AI+Dashboard&bg=gray&color=white'">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="py-20 bg-gray-900 opacity-0 fade-in" style="--delay: 0.1s;">
+        <div class="max-w-6xl mx-auto px-4">
+            <h3 class="text-4xl font-bold text-center mb-12 text-green-400">Ключевые функции</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="card bg-gray-800 p-6 text-center group hover:bg-green-900 transition-all">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3090/3090011.png?w=100&q=80" alt="Analysis Icon" class="mx-auto mb-4 w-16 h-16 rounded-full object-cover" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/100x100?text=Analysis&bg=blue&color=white'">
+                    <h4 class="text-xl font-semibold mb-2">Анализ данных</h4>
+                    <p class="text-gray-400">Мгновенный insights из больших данных.</p>
+                </div>
+                <div class="card bg-gray-800 p-6 text-center group hover:bg-green-900 transition-all" style="--delay: 0.2s;">
+                    <img src="https://img.freepik.com/free-vector/robotic-process-automation-illustration_23-2149227347.jpg?w=100&q=80" alt="Automation Icon" class="mx-auto mb-4 w-16 h-16 rounded-full object-cover" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/100x100?text=Automation&bg=green&color=white'">
+                    <h4 class="text-xl font-semibold mb-2">Автоматизация</h4>
+                    <p class="text-gray-400">Роботы для рутины — фокус на креативе.</p>
+                </div>
+                <div class="card bg-gray-800 p-6 text-center group hover:bg-green-900 transition-all" style="--delay: 0.3s;">
+                    <img src="https://www.shutterstock.com/image-vector/outline-ai-security-icon-editable-260nw-2586980107.jpg?w=100&q=80" alt="Security Icon" class="mx-auto mb-4 w-16 h-16 rounded-full object-cover" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/100x100?text=Security&bg=red&color=white'">
+                    <h4 class="text-xl font-semibold mb-2">Безопасность</h4>
+                    <p class="text-gray-400">Enterprise-шифрование, zero leaks.</p>
+                </div>
+                <div class="card bg-gray-800 p-6 text-center group hover:bg-green-900 transition-all" style="--delay: 0.4s;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1878/1878359.png?w=100&q=80" alt="Integration Icon" class="mx-auto mb-4 w-16 h-16 rounded-full object-cover" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/100x100?text=Integration&bg=orange&color=white'">
+                    <h4 class="text-xl font-semibold mb-2">Интеграции</h4>
+                    <p class="text-gray-400">API с Slack, Google, custom tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages -->
+    <section id="advantages" class="py-20 bg-gray-800 opacity-0 fade-in">
+        <div class="max-w-6xl mx-auto px-4">
+            <h3 class="text-4xl font-bold text-center mb-12 text-green-400">Преимущества Pro</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card bg-gray-800 p-8 transform hover:-translate-y-2 transition-all">
+                    <h4 class="text-2xl font-semibold mb-4 text-green-400">Скорость</h4>
+                    <p class="text-gray-300 mb-4">Обработка терабайтов за секунды, без лагов даже на мобильных.</p>
+                    <img src="https://img.freepik.com/free-vector/dashboard-element-collection-template_23-2148376367.jpg?w=300&q=80" alt="Speed Graph" class="w-full rounded-lg mb-4 object-cover" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/300x200?text=Speed+Graph&bg=cyan&color=white'">
+                </div>
+                <div class="card bg-gray-800 p-8 transform hover:-translate-y-2 transition-all">
+                    <h4 class="text-2xl font-semibold mb-4 text-green-400">Масштаб</h4>
+                    <p class="text-gray-300 mb-4">От стартапа до enterprise — масштабируем без downtime.</p>
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/010/595/391/small_2x/quality-efficiency-speed-up-and-cost-down-quality-and-performance-graphs-chart-illustration-vector.jpg?w=300&q=80" alt="Scale Illustration" class="w-full rounded-lg mb-4 object-cover" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/300x200?text=Scale&bg=indigo&color=white'">
+                </div>
+                <div class="card bg-gray-800 p-8 transform hover:-translate-y-2 transition-all">
+                    <h4 class="text-2xl font-semibold mb-4 text-green-400">Поддержка</h4>
+                    <p class="text-gray-300 mb-4">24/7 чат, docs и community для быстрого онбординга.</p>
+                    <img src="https://static.vecteezy.com/system/resources/previews/008/037/900/non_2x/online-customer-support-live-chat-illustration-concept-vector.jpg?w=300&q=80" alt="Support Chat" class="w-full rounded-lg mb-4 object-cover" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/300x200?text=Support&bg=yellow&color=black'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 bg-gray-900 opacity-0 fade-in">
+        <div class="max-w-4xl mx-auto px-4">
+            <h3 class="text-4xl font-bold text-center mb-12 text-green-400">Что говорят пользователи</h3>
+            <div id="carousel" class="relative overflow-hidden rounded-2xl bg-gray-800 p-8">
+                <div class="slides-container relative h-32">
+                    <div class="slide absolute inset-0 flex items-center space-x-8 opacity-1 transition-opacity duration-500">
+                        <img src="https://www.shutterstock.com/image-photo/portrait-young-investor-banker-workplace-260nw-2364566447.jpg?w=100&q=80" alt="User1 Portrait" class="w-20 h-20 rounded-full object-cover" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/100x100?text=User1&bg=purple&color=white'">
+                        <div>
+                            <p class="text-gray-300 italic">"Революция в автоматизации! Сэкономили 40% времени."</p>
+                            <h5 class="font-semibold mt-2">Анна, CEO Startup</h5>
+                        </div>
+                    </div>
+                    <div class="slide absolute inset-0 flex items-center space-x-8 opacity-0 transition-opacity duration-500">
+                        <img src="https://www.shutterstock.com/image-photo/portrait-happy-ambitious-indian-top-600nw-2526019719.jpg?w=100&q=80" alt="User2 Portrait" class="w-20 h-20 rounded-full object-cover" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/100x100?text=User2&bg=blue&color=white'">
+                        <div>
+                            <p class="text-gray-300 italic">"Идеальный инструмент для данных."</p>
+                            <h5 class="font-semibold mt-2">Иван, Dev</h5>
+                        </div>
+                    </div>
+                    <div class="slide absolute inset-0 flex items-center space-x-8 opacity-0 transition-opacity duration-500">
+                        <img src="https://media.istockphoto.com/id/1221891012/vector/customer-support-concept-young-woman-at-support-department-advises-customer-on-live-chat.jpg?w=100&q=80" alt="User3 Portrait" class="w-20 h-20 rounded-full object-cover" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/100x100?text=User3&bg=green&color=white'">
+                        <div>
+                            <p class="text-gray-300 italic">"Безопасность на высоте."</p>
+                            <h5 class="font-semibold mt-2">Мария, Manager</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-20 bg-gray-800 opacity-0 fade-in">
+        <div class="max-w-6xl mx-auto px-4">
+            <h3 class="text-4xl font-bold text-center mb-12 text-green-400">Тарифы</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card bg-gray-900 p-6 text-center border-2 border-green-500 rounded-xl">
+                    <h4 class="text-2xl mb-2">Starter</h4>
+                    <p class="text-4xl font-bold text-green-400 mb-4">$9/мес</p>
+                    <ul class="space-y-2 mb-6">
+                        <li>• 100 запросов</li>
+                        <li>• Базовый анализ</li>
+                    </ul>
+                    <a href="#contact" class="button-primary block">Выбрать</a>
+                </div>
+                <div class="card bg-gray-900 p-6 text-center border-2 border-green-500 rounded-xl">
+                    <h4 class="text-2xl mb-2">Pro</h4>
+                    <p class="text-4xl font-bold text-green-400 mb-4">$29/мес</p>
+                    <ul class="space-y-2 mb-6">
+                        <li>• 1000 запросов</li>
+                        <li>• Полный анализ</li>
+                    </ul>
+                    <a href="#contact" class="button-primary block">Выбрать</a>
+                </div>
+                <div class="card bg-gray-900 p-6 text-center border-2 border-green-500 rounded-xl">
+                    <h4 class="text-2xl mb-2">Enterprise</h4>
+                    <p class="text-4xl font-bold text-green-400 mb-4">$99/мес</p>
+                    <ul class="space-y-2 mb-6">
+                        <li>• Неограничено</li>
+                        <li>• Кастом</li>
+                    </ul>
+                    <a href="#contact" class="button-primary block">Выбрать</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 bg-gray-900 opacity-0 fade-in">
+        <div class="max-w-2xl mx-auto px-4">
+            <h3 class="text-4xl font-bold text-center mb-12 text-green-400">Свяжитесь с нами</h3>
+            <form id="contact-form" class="space-y-4">
+                <input type="text" placeholder="Имя" class="w-full p-3 bg-gray-800 rounded-lg">
+                <input type="email" placeholder="Email" class="w-full p-3 bg-gray-800 rounded-lg">
+                <textarea placeholder="Сообщение" rows="5" class="w-full p-3 bg-gray-800 rounded-lg"></textarea>
+                <button type="submit" class="button-primary w-full">Отправить</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog" class="py-20 bg-gray-800 opacity-0 fade-in">
+        <div class="max-w-6xl mx-auto px-4">
+            <h3 class="text-4xl font-bold text-center mb-12 text-green-400">Блог</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <article class="card bg-gray-900 p-6">
+                    <img src="https://framerusercontent.com/images/RBpHBZtwSkU6uF9GENaXtaZ4ozU.png?w=300&q=80" alt="AI Tips Thumbnail" class="w-full rounded mb-4 object-cover" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/300x200?text=AI+Tips&bg=teal&color=white'">
+                    <h4 class="text-xl mb-2">5 советов по ИИ</h4>
+                    <p class="text-gray-400">Как интегрировать в бизнес...</p>
+                </article>
+                <article class="card bg-gray-900 p-6">
+                    <img src="https://framerusercontent.com/images/t7NmhvH6akVbi2VD37jxYMM6xts.jpg?w=300&q=80" alt="AI Future Thumbnail" class="w-full rounded mb-4 object-cover" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/300x200?text=AI+Future&bg=violet&color=white'">
+                    <h4 class="text-xl mb-2">Будущее ИИ</h4>
+                    <p class="text-gray-400">Тренды 2025...</p>
+                </article>
+                <article class="card bg-gray-900 p-6">
+                    <img src="https://media.stockimg.ai/designed/zl6_0okfSuUW.png?w=300&q=80" alt="AI Data Thumbnail" class="w-full rounded mb-4 object-cover" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/300x200?text=AI+Data&bg=indigo&color=white'">
+                    <h4 class="text-xl mb-2">Данные и ИИ</h4>
+                    <p class="text-gray-400">Анализ больших объёмов...</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12 border-t border-green-500">
+        <div class="max-w-6xl mx-auto px-4 text-center text-gray-400">
+            <p>&copy; 2025 AI Assistant Pro. Все права.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="#" class="hover:text-green-400">Privacy</a>
+                <a href="#" class="hover:text-green-400">Terms</a>
+                <a href="#" class="hover:text-green-400">Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme toggle -->
+    <button id="theme-toggle" class="fixed top-4 right-4 bg-gray-800 dark:bg-gray-200 p-3 rounded-full shadow-lg z-40 transition">☀️</button>
+
+    <!-- Scripts -->
+    <script src="theme-toggle.js"></script>
+    <script src="animations.js"></script>
+    <script src="particles.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            initParticles('hero-canvas');
+            initTypewriter();
+            initCarousel();
+            // Mobile menu toggle
+            const toggle = document.getElementById('mobile-toggle');
+            const menu = document.getElementById('mobile-menu');
+            toggle.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                menu.classList.toggle('mobile-open');
+            });
+            // Close on link click
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    menu.classList.remove('mobile-open');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

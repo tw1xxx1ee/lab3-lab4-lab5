@@ -1,0 +1,20 @@
+// Vars: Dark first (green neon accents)
+$main-color: #22c55e; // Green for dark
+$text-color: #f3f4f6;
+$bg-dark: #111827;
+$bg-light: #f9fafb;
+$text-dark: #f9fafb;
+
+// CSS vars, dark default
+:root {
+  --main-color: #{$main-color};
+  --text-color: #{$text-color};
+  --bg-color: #{$bg-dark}; // Dark default
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: #{$bg-light};
+  }
+}
+.light { --bg-color: #{$bg-light}; color-scheme: light; }

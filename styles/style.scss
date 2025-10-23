@@ -1,0 +1,43 @@
+// Главный SASS (импорт через @use + использование, как в lab3 стр. 11-12)
+@use 'variables' as var;
+@use 'mixins'; // Импорт миксинов (миграция с @import)
+
+// Глобальные стили с вложенностью (lab3 стр. 5)
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+
+  // Адаптивность: медиазапросы (lab3 стр. 12)
+  @media (max-width: 600px) {
+    font-size: 14px; // Масштабирование текста
+  }
+
+  // Тёмная тема (override CSS vars)
+  &.dark {
+    --bg-color: var.$bg-dark;
+    --text-color: var.$text-dark;
+  }
+
+  .card { // Вложенность для карточек
+    @include mixins.card-style;
+    border: 1px solid var(--main-color);
+    padding: 1rem;
+
+    @media (max-width: 600px) {
+      padding: 0.5rem; // Адаптив (lab3 + lab4)
+    }
+  }
+
+  .button-primary { // Класс для кнопок (миксин)
+    @include mixins.button-primary;
+  }
+}
+
+// Базовые стили (reset, без @tailwind — CDN сам)
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+

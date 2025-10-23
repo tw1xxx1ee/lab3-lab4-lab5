@@ -1,0 +1,78 @@
+:root {
+  --main-color: #22c55e;
+  --text-color: #f3f4f6;
+  --bg-color: #111827;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: #f9fafb;
+  }
+}
+.light {
+  --bg-color: #f9fafb;
+  color-scheme: light;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+}
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+}
+body.dark {
+  --bg-color: var.$bg-dark;
+  --text-color: var.$text-dark;
+}
+body .card {
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+}
+body .card:hover {
+  box-shadow: 0 10px 25px rgba(34, 197, 94, 0.3);
+  transform: translateY(-5px);
+}
+body .card {
+  border: 1px solid var(--main-color);
+  padding: 1rem;
+}
+@media (max-width: 600px) {
+  body .card {
+    padding: 0.5rem;
+  }
+}
+body .button-primary {
+  background: var(--main-color);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+body .button-primary:hover {
+  background: rgb(26.4935064935, 153.5064935065, 73.2467532468);
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+  transform: scale(1.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*# sourceMappingURL=style.css.map */
